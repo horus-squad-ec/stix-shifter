@@ -4,7 +4,7 @@ This is a STIX shifter transmission module for querying a Druid database using i
 
 ## Testing
 
-If you don't have an Apache Druid for testing, follow this [tutorial]() to create one.
+If you don't have an Apache Druid for testing, follow this [tutorial](https://druid.apache.org/docs/latest/tutorials/index.html) to create one.
 
 The tests omit user/password authentication and use the `wikipedia` dataset that comes with Apache Druid.
 
