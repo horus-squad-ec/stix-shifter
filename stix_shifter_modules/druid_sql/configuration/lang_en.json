@@ -1,0 +1,56 @@
+{
+    "connection": {
+        "host": {
+            "label": "Data source IP address or hostname",
+            "placeholder": "localhost",
+            "description": "Specify the IP address or hostname of the Druid data source"
+        },
+        "port": {
+            "label": "Data source port",
+            "placeholder": "8082",
+            "description": "Specify the associated port number of the data source."
+        },
+        "path": {
+            "label": "Data source endpoint path",
+            "description": "The endpoint path for Druid"
+        },
+        "scheme": {
+            "label": "Data source connection scheme",
+            "description": "The connection scheme for communicating with Druid"
+        },
+        "help": {
+            "label": "Need additional help?",
+            "description": "More details on the data source setting can be found in the specified link"
+        },
+        "ssl_verify_cert": {
+            "label": "Verify connection certificate",
+            "description": "Verify SSL certificate and CA content(root and intermediate) of data source"
+        },
+        "ssl_client_cert": {
+            "label": "Path to client certificate",
+            "description": "Specify the path to client certificate"
+        },
+        "options": {
+            "timeout": {
+                "label": "Connection timeout",
+                "description": "The timeout in millis of the connection"
+            },
+            "priority": {
+                "label": "Connection priority",
+                "description": "The priority of client requests"
+            }
+        }
+    },
+    "configuration": {
+        "auth": {
+            "username": {
+                "label": "Username",
+                "description": "Username with access to the database"
+            },
+            "password": {
+                "label": "Password",
+                "description": "Password of the user with access to the database"
+            }
+        }
+    }
+}

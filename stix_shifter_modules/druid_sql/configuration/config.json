@@ -1,0 +1,60 @@
+{
+    "connection": {
+        "type": {
+            "displayName": "Druid"
+        },
+        "host": {
+            "type": "text",
+            "regex": "^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])$"
+        },
+        "port": {
+            "type": "number",
+            "default": 8082,
+            "min": 1,
+            "max": 65535
+        },
+        "path": {
+            "type": "text",
+            "default": "/druid/v2/sql/"
+        },
+        "scheme": {
+            "type": "text",
+            "default": "http"
+        },
+        "help": {
+            "type": "link",
+            "default": "https://github.com/druid-io/pydruid"
+        },
+        "ssl_verify_cert": {
+            "type": "text",
+            "optional": true
+        },
+        "ssl_client_cert": {
+            "type": "text",
+            "optional": true
+        },
+        "options": {
+            "timeout": {
+                "type": "number",
+                "optional": true
+            },
+            "priority": {
+                "type": "number",
+                "optional": true
+            }
+        }
+    },
+    "configuration": {
+        "auth": {
+            "type" : "fields",
+            "username": {
+                "type": "password",
+                "optional": true
+            },
+            "password": {
+                "type": "password",
+                "optional": true
+            }
+        }
+    }
+}
