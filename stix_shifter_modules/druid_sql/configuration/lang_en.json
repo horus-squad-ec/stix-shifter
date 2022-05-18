@@ -29,16 +29,6 @@
         "ssl_client_cert": {
             "label": "Path to client certificate",
             "description": "Specify the path to client certificate"
-        },
-        "options": {
-            "timeout": {
-                "label": "Connection timeout",
-                "description": "The timeout in millis of the connection"
-            },
-            "priority": {
-                "label": "Connection priority",
-                "description": "The priority of client requests"
-            }
         }
     },
     "configuration": {

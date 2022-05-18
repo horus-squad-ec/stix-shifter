@@ -32,16 +32,6 @@
         "ssl_client_cert": {
             "type": "text",
             "optional": true
-        },
-        "options": {
-            "timeout": {
-                "type": "number",
-                "optional": true
-            },
-            "priority": {
-                "type": "number",
-                "optional": true
-            }
         }
     },
     "configuration": {
