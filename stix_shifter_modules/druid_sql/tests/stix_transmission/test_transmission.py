@@ -12,7 +12,7 @@ class TestDruidConnection(unittest.TestCase, object):
     }
 
     connection = {
-        'host': 'chase.sl.cloud9.ibm.com'
+        'host': 'placeholder'
     }
 
     def test_is_async(self, mock_api_client):
