@@ -169,7 +169,7 @@ class DataSourceObjToStixObj:
             # if the datasource fields is a collection of json object than we need to unwrap it and create multiple objects
             if unwrap:
                 tag = tag + '_' + str(unwrap)
-
+            
             if tag in object_tag_ref_map['tags']:
                 tag_ind = object_tag_ref_map['tags'][tag]['i']
                 object_tag_ref_map['tags'][tag]['n'] += 1
@@ -247,7 +247,7 @@ class DataSourceObjToStixObj:
                             cust_prop = to_stix_config_prop[k]
                         elif self.options.get('unmapped_fallback') and k not in object_tag_ref_map['ds_key_cybox']:
                             cust_prop = {"key": "x-" + self.data_source.replace("_", "-") + "." + k, "object": "cust_object"}
-                            
+                        
                         if cust_prop:
                             self._handle_properties(cust_prop, data[k], objects, object_tag_ref_map, data, k, object_key_ind)
                 else:
@@ -273,6 +273,14 @@ class DataSourceObjToStixObj:
 
                 transformer = self.transformers[prop['transformer']] if 'transformer' in prop else None
                 references = references = prop['references'] if 'references' in prop else None
+
+                # In a list or dict, the parent_key will have the index suffix
+                # In order to look up a reference, we need to add the suffix as well
+                # Might want to consider checking if the reference already has a suffix, r".*_\d+", and if so, don't change it
+                if object_key_ind and references:
+                        references = references + '_' + str(object_key_ind)
+
+
                 # unwrap array of stix values to separate stix objects
                 unwrap = True if 'unwrap' in prop and isinstance(data, list) else False
                 cybox = prop.get('cybox', self.cybox_default)
